@@ -34,6 +34,7 @@
     a {
       padding: 5px 10px;
       color: #fff;
+      text-decoration: none;
     }
   }
 }

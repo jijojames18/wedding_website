@@ -1,9 +1,10 @@
 <script setup lang="ts">
 import AppNav from "./components/AppNav.vue";
+import AppHeading from "./components/AppHeading.vue";
 </script>
 
 <template>
-  <div class="main-container"><AppNav /></div>
+  <div class="main-container"><AppNav /><AppHeading /></div>
 </template>
 
 <style scoped>

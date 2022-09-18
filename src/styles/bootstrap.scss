@@ -1,20 +1,17 @@
-@import "~/bootstrap/scss/bootstrap.scss";
-
 // Bootstrap import only essential files
 @import "~/bootstrap/scss/functions";
 @import "~/bootstrap/scss/variables";
+@import "~/bootstrap/scss/maps";
 @import "~/bootstrap/scss/mixins";
+@import "~/bootstrap/scss/utilities";
 
+// Bootstap layout
 @import "~/bootstrap/scss/reboot";
 @import "~/bootstrap/scss/type";
 @import "~/bootstrap/scss/images";
+@import "~/bootstrap/scss/containers";
 @import "~/bootstrap/scss/grid";
 
-body {
-  font-family: "Work Sans", Arial, sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.7;
-  color: #828282;
-  background: #fff;
-}
+// Bootstrap components
+@import "~/bootstrap/scss/button-group";
+@import "~/bootstrap/scss/buttons";

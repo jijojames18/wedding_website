@@ -10,8 +10,10 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
   },
   "dependencies": {
+    "add-to-calendar-button": "^1.15.5",
     "bootstrap": "^5.2.1",
     "bootstrap-vue": "^2.22.0",
+    "simplycountdown.js": "^1.7.0",
     "vue": "^3.2.38"
   },
   "devDependencies": {
