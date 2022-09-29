@@ -2,7 +2,7 @@ import { createApp } from "vue";
 import App from "./App.vue";
 
 // JS Libraries
-import "~/simplyCountdown.js/dev/simplyCountdown";
+import "~/simplyCountdown.js/dev/simplyCountdown.js";
 
 // CSS
 import "./styles/main.scss";
