@@ -40,7 +40,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="cover" style="background-image: url(assets/img_bg_3.jpg)">
+  <div class="cover">
     <div class="container">
       <div class="row">
         <div class="col-md-8 offset-md-2 text-center heading-container">
@@ -90,6 +90,7 @@ onMounted(() => {
                     <i class="icon-location"></i>
                     <span>
                       Sri Mulam Club CV Raman Pillai Rd, Near Tagore Theatre
+                      Vazhuthacaud
                     </span>
                   </div>
                   <div
@@ -109,6 +110,7 @@ onMounted(() => {
 
 <style scoped lang="scss">
 .cover {
+  background-image: url(@/assets/img_bg_3.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   position: relative;

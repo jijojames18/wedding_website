@@ -45,12 +45,7 @@ onMounted(() => {
 });
 </script>
 <template>
-  <header
-    class="cover"
-    role="banner"
-    style="background-image: url(assets/img_bg_2.jpg)"
-    data-stellar-background-ratio="0.5"
-  >
+  <header class="cover" role="banner" data-stellar-background-ratio="0.5">
     <div class="container">
       <div class="row">
         <div class="col-md-8 offset-md-2 text-center">
@@ -79,6 +74,7 @@ onMounted(() => {
 
 <style scoped lang="scss">
 .cover {
+  background-image: url(@/assets/img_bg_2.jpg);
   height: 900px;
   background-size: cover;
   background-repeat: no-repeat;
