@@ -29,6 +29,7 @@ const remainderButtonConfig = {
 };
 
 const saveDateButton = ref(null);
+const wayPointElem = ref(null);
 
 const saveDateClick = function () {
   atcb_action(remainderButtonConfig, saveDateButton.value);
@@ -42,6 +43,14 @@ onMounted(() => {
     day: d.getDate(),
     countUp: true,
   });
+  new window.Waypoint({
+    element: wayPointElem.value,
+    handler: function () {
+      wayPointElem.value.classList.add("animate__animated");
+      wayPointElem.value.classList.add("animate__fadeInUp");
+      wayPointElem.value.classList.add("animate__fast");
+    },
+  });
 });
 </script>
 <template>
@@ -50,7 +59,7 @@ onMounted(() => {
       <div class="row">
         <div class="col-md-8 offset-md-2 text-center">
           <div class="title-container">
-            <div class="title animate-box" data-animate-effect="fadeIn">
+            <div class="title animate-box" ref="wayPointElem">
               <h1>User A &amp; User B</h1>
               <h2>We Are Getting Married</h2>
               <div class="simply-countdown"></div>

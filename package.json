@@ -11,10 +11,12 @@
   },
   "dependencies": {
     "add-to-calendar-button": "^1.15.5",
+    "animate.css": "^4.1.1",
     "bootstrap": "^5.2.1",
     "bootstrap-vue": "^2.22.0",
     "simplycountdown.js": "^1.7.0",
-    "vue": "^3.2.38"
+    "vue": "^3.2.38",
+    "waypoints": "^4.0.1"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.1.4",
