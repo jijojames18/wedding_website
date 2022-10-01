@@ -16,6 +16,7 @@
     "bootstrap-vue": "^2.22.0",
     "simplycountdown.js": "^1.7.0",
     "vue": "^3.2.38",
+    "vue3-carousel-3d": "^1.0.4",
     "waypoints": "^4.0.1"
   },
   "devDependencies": {

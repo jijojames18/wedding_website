@@ -4,6 +4,8 @@ import { onMounted, ref } from "vue";
 import AppNav from "./components/AppNav.vue";
 import AppHeading from "./components/AppHeading.vue";
 import AppEvent from "./components/AppEvent.vue";
+import AppGallery from "./components/AppGallery.vue";
+import AppFooter from "./components/AppFooter.vue";
 
 const isLoading = ref(true);
 
@@ -18,7 +20,7 @@ onMounted(() => {
   <div>
     <div class="loader" v-if="isLoading"></div>
     <div class="main-container" v-else>
-      <AppNav /><AppHeading /><AppEvent />
+      <AppNav /><AppHeading /><AppEvent /><AppGallery /><AppFooter />
     </div>
   </div>
 </template>
