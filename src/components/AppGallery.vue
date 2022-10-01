@@ -7,15 +7,22 @@ const getImageUrl = function (i) {
 };
 
 const slides = 3;
-const wayPointElem = ref(null);
+
+const wayPointGallery = ref(null);
+const wayPointEvent = ref(null);
 
 onMounted(() => {
+  console.log(wayPointEvent.value);
   new window.Waypoint({
-    element: wayPointElem.value,
+    element: wayPointEvent.value,
     handler: function () {
-      wayPointElem.value.classList.add("animate__animated");
-      wayPointElem.value.classList.add("animate__fadeIn");
-      wayPointElem.value.classList.add("animate__fast");
+      wayPointEvent.value.classList.add("animate__animated");
+      wayPointEvent.value.classList.add("animate__fadeIn");
+      wayPointEvent.value.classList.add("animate__fast");
+
+      wayPointGallery.value.classList.add("animate__animated");
+      wayPointGallery.value.classList.add("animate__fadeIn");
+      wayPointGallery.value.classList.add("animate__fast");
     },
   });
 });
@@ -25,11 +32,14 @@ onMounted(() => {
   <div class="gallery">
     <div class="container">
       <div class="row">
-        <div class="col-md-8 offset-md-2 text-center heading-container">
+        <div
+          class="col-md-8 offset-md-2 text-center heading-container"
+          ref="wayPointEvent"
+        >
           <h2>Wedding Gallery</h2>
         </div>
       </div>
-      <div class="row row-bottom-padded-md animate-box" ref="wayPointElem">
+      <div class="row" ref="wayPointGallery">
         <div class="col-md-12">
           <carousel-3d :autoplay="true" :width="640" :height="360">
             <slide v-for="(slide, i) in slides" :key="i" :index="i">

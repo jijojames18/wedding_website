@@ -39,24 +39,23 @@ onMounted(() => {
       const mapReception = getMapInstance(googleMapReception, receptionCoords);
       addMarker(mapReception, receptionCoords);
     });
-
-    new window.Waypoint({
-      element: wayPointElem.value,
-      handler: function () {
-        wayPointElem.value.classList.add("animate__animated");
-        wayPointElem.value.classList.add("animate__fadeIn");
-        wayPointElem.value.classList.add("animate__fast");
-
-        wayPointElemEvent1.value.classList.add("animate__animated");
-        wayPointElemEvent1.value.classList.add("animate__fadeIn");
-        wayPointElemEvent1.value.classList.add("animate__fast");
-
-        wayPointElemEvent2.value.classList.add("animate__animated");
-        wayPointElemEvent2.value.classList.add("animate__fadeIn");
-        wayPointElemEvent2.value.classList.add("animate__fast");
-      },
-    });
   }
+  new window.Waypoint({
+    element: wayPointElem.value,
+    handler: function () {
+      wayPointElem.value.classList.add("animate__animated");
+      wayPointElem.value.classList.add("animate__fadeIn");
+      wayPointElem.value.classList.add("animate__fast");
+
+      wayPointElemEvent1.value.classList.add("animate__animated");
+      wayPointElemEvent1.value.classList.add("animate__fadeIn");
+      wayPointElemEvent1.value.classList.add("animate__fast");
+
+      wayPointElemEvent2.value.classList.add("animate__animated");
+      wayPointElemEvent2.value.classList.add("animate__fadeIn");
+      wayPointElemEvent2.value.classList.add("animate__fast");
+    },
+  });
 });
 </script>
 
