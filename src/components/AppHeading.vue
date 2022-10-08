@@ -50,6 +50,7 @@ onMounted(() => {
       wayPointElem.value.classList.add("animate__fadeInUp");
       wayPointElem.value.classList.add("animate__fast");
     },
+    offset: 200,
   });
 });
 </script>
