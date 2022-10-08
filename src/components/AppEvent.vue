@@ -4,9 +4,7 @@ import { onMounted, ref } from "vue";
 const googleMapChurch = ref(null);
 const googleMapReception = ref(null);
 
-const wayPointElem = ref(null);
-const wayPointElemEvent1 = ref(null);
-const wayPointElemEvent2 = ref(null);
+const eventElem = ref(null);
 
 const getMapInstance = function (mapRef, coords) {
   return new window.google.maps.Map(mapRef.value, {
@@ -41,19 +39,11 @@ onMounted(() => {
     });
   }
   new window.Waypoint({
-    element: wayPointElem.value,
+    element: eventElem.value,
     handler: function () {
-      wayPointElem.value.classList.add("animate__animated");
-      wayPointElem.value.classList.add("animate__fadeIn");
-      wayPointElem.value.classList.add("animate__fast");
-
-      wayPointElemEvent1.value.classList.add("animate__animated");
-      wayPointElemEvent1.value.classList.add("animate__fadeIn");
-      wayPointElemEvent1.value.classList.add("animate__fast");
-
-      wayPointElemEvent2.value.classList.add("animate__animated");
-      wayPointElemEvent2.value.classList.add("animate__fadeIn");
-      wayPointElemEvent2.value.classList.add("animate__fast");
+      eventElem.value.classList.add("animate__animated");
+      eventElem.value.classList.add("animate__fadeIn");
+      eventElem.value.classList.add("animate__fast");
     },
     offset: 200,
   });
@@ -62,12 +52,9 @@ onMounted(() => {
 
 <template>
   <div class="cover">
-    <div class="container">
+    <div class="container animate-box" ref="eventElem">
       <div class="row">
-        <div
-          class="col-md-8 offset-md-2 text-center heading-container animate-box"
-          ref="wayPointElem"
-        >
+        <div class="col-md-8 offset-md-2 text-center heading-container">
           <h2>Wedding Events</h2>
         </div>
       </div>
@@ -76,7 +63,7 @@ onMounted(() => {
           <div class="title">
             <div class="col-md-10 offset-md-1">
               <div class="col-md-6 col-sm-6 text-center event-container">
-                <div class="event-wrap animate-box" ref="wayPointElemEvent1">
+                <div class="event-wrap" ref="wayPointElemEvent1">
                   <h3>Wedding</h3>
                   <div class="event-col">
                     <i class="icon-clock"></i>
@@ -100,7 +87,7 @@ onMounted(() => {
                 </div>
               </div>
               <div class="col-md-6 col-sm-6 text-center event-container">
-                <div class="event-wrap animate-box" ref="wayPointElemEvent2">
+                <div class="event-wrap" ref="wayPointElemEvent2">
                   <h3>Reception</h3>
                   <div class="event-col">
                     <i class="icon-clock"></i>

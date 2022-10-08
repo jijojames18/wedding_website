@@ -12,6 +12,7 @@ const isLoading = ref(true);
 
 onMounted(() => {
   setTimeout(() => {
+    // Set loading to false after load
     isLoading.value = false;
   }, 1000);
 });
@@ -36,8 +37,6 @@ onMounted(() => {
   position: relative;
   width: 100%;
   height: 100%;
-  -webkit-transition: 0.5s;
-  -o-transition: 0.5s;
   transition: 0.5s;
 }
 .loader {
@@ -46,7 +45,7 @@ onMounted(() => {
   top: 0px;
   width: 100%;
   height: 100%;
-  z-index: 9999;
+  z-index: 2;
   background: url(@/assets/loader.gif) center no-repeat #fff;
 }
 </style>
