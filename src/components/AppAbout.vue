@@ -1,22 +1,15 @@
 <script setup>
 import { onMounted, ref } from "vue";
 
+import { generateWayPoint } from "@/utils.js";
+
 const storyElem = ref(null);
-
-onMounted(() => {
-  new window.Waypoint({
-    element: storyElem.value,
-    handler: function () {
-      storyElem.value.classList.add("animate__animated");
-      storyElem.value.classList.add("animate__fadeIn");
-      storyElem.value.classList.add("animate__fast");
-    },
-    offset: 200,
-  });
-});
-
 const groomURL = new URL(`../assets/groom.jpg`, import.meta.url).href;
 const brideURL = new URL(`../assets/bride.jpg`, import.meta.url).href;
+
+onMounted(() => {
+  generateWayPoint(storyElem);
+});
 </script>
 
 <template>
@@ -63,13 +56,13 @@ const brideURL = new URL(`../assets/bride.jpg`, import.meta.url).href;
 </template>
 
 <style lang="scss" scoped>
-@import "../styles/common.scss";
+@import "@/styles/common.scss";
 
 .cover {
-  padding: 7em 0;
+  padding: $padding-cover;
   clear: both;
   height: 100%;
-  background: white;
+  background: $white;
 
   .couple-wrap {
     width: 90%;
@@ -80,25 +73,19 @@ const brideURL = new URL(`../assets/bride.jpg`, import.meta.url).href;
       width: 50%;
       float: left;
       h3 {
-        font-family: "Sacramento", Arial, serif;
-        color: #f14e95;
-        font-size: 30px;
+        font-family: $font-sacramento;
+        color: $pink;
+        font-size: $font-size-large;
       }
       .groom,
       .bride {
         float: left;
-        -webkit-border-radius: 50%;
-        -moz-border-radius: 50%;
-        -ms-border-radius: 50%;
         border-radius: 50%;
         width: 150px;
         height: 150px;
         img {
           width: 150px;
           height: 150px;
-          -webkit-border-radius: 50%;
-          -moz-border-radius: 50%;
-          -ms-border-radius: 50%;
           border-radius: 50%;
         }
       }
@@ -127,17 +114,14 @@ const brideURL = new URL(`../assets/bride.jpg`, import.meta.url).href;
       top: 4em;
       left: 0;
       right: 0;
-      z-index: 99;
+      z-index: 3;
       animation: pulse 1s ease infinite;
     }
     .heart i {
       font-size: 20px;
-      background: #fff;
+      background: $white;
       padding: 20px;
-      color: #f14e95;
-      -webkit-border-radius: 50%;
-      -moz-border-radius: 50%;
-      -ms-border-radius: 50%;
+      color: $pink;
       border-radius: 50%;
     }
 
@@ -149,11 +133,6 @@ const brideURL = new URL(`../assets/bride.jpg`, import.meta.url).href;
 
 @media screen and (max-width: 768px) {
   .cover {
-    padding: 3em 0;
-    .container {
-      margin: 0;
-      max-width: 100%;
-    }
     .couple-wrap {
       width: 100%;
       .couple-half {

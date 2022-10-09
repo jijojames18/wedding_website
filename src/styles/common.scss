@@ -10,7 +10,7 @@
   padding: $padding-cover;
 
   .container::before {
-    content: "";
+    content: " ";
     display: table;
   }
   .container::after {
@@ -33,30 +33,28 @@
     h2 {
       margin: 0;
       padding: 0;
-      color: white;
+      color: $white;
     }
     h1 {
       margin-bottom: 0px;
       font-size: 100px;
       line-height: 1.5;
-      font-family: "Sacramento", Arial, serif;
+      font-family: $font-sacramento;
     }
     h2 {
-      font-size: 20px;
+      font-size: $font-size-heading;
       line-height: 1.5;
       margin-bottom: 30px;
     }
     .btn {
       padding: 15px 20px;
-      background: #fff !important;
-      color: #f14e95;
+      background: $white !important;
+      color: $pink;
       border: none !important;
-      font-size: 14px;
+      font-size: $font-size;
       text-transform: uppercase;
       &:hover {
-        background: #fff !important;
-        -webkit-box-shadow: 0px 14px 30px -15px rgba(0, 0, 0, 0.75) !important;
-        -moz-box-shadow: 0px 14px 30px -15px rgba(0, 0, 0, 0.75) !important;
+        background: $white !important;
         box-shadow: 0px 14px 30px -15px rgba(0, 0, 0, 0.75) !important;
       }
     }
@@ -69,8 +67,8 @@
       margin-bottom: 10px;
       line-height: 1.5;
       font-weight: bold;
-      color: #f14e95;
-      font-family: "Sacramento", Arial, serif;
+      color: $pink;
+      font-family: $font-sacramento;
     }
     span {
       text-transform: uppercase;
@@ -82,7 +80,7 @@
     p {
       font-size: 18px;
       line-height: 1.5;
-      color: #828282;
+      color: $text-color;
     }
   }
 }
@@ -90,6 +88,10 @@
 @media screen and (max-width: 768px) {
   .cover {
     padding: $padding-cover-small;
+    .container {
+      margin: 0;
+      max-width: 100%;
+    }
     .title-container,
     .title {
       height: 600px;
@@ -108,10 +110,10 @@
     .title-container,
     .title {
       h1 {
-        font-size: 30px;
+        font-size: $font-size-heading;
       }
       h2 {
-        font-size: 16px;
+        font-size: $font-size;
       }
     }
   }

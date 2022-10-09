@@ -118,14 +118,10 @@ onMounted(() => {
         padding: 30px;
         width: 100%;
         float: left;
-        -webkit-border-radius: 4px;
-        -moz-border-radius: 4px;
-        -ms-border-radius: 4px;
         border-radius: 4px;
         h3 {
-          font-size: 20px;
-          color: #fff;
-          border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+          font-size: $font-size-heading;
+          color: $white;
           display: block;
           padding-bottom: 20px;
           text-transform: uppercase;
@@ -137,8 +133,8 @@ onMounted(() => {
           color: rgba(255, 255, 255, 0.8);
         }
         i {
-          color: white;
-          font-size: 20px;
+          color: $white;
+          font-size: $font-size-heading;
         }
         .event-col {
           width: 50%;
@@ -162,16 +158,6 @@ onMounted(() => {
           clear: both;
         }
       }
-    }
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .title-container,
-  .title {
-    height: inherit;
-    .event-wrap {
-      margin-bottom: 10px;
     }
   }
 }
