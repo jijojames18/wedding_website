@@ -1,0 +1,118 @@
+@import "@/styles/variables.scss";
+
+.cover {
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  clear: both;
+  padding: $padding-cover;
+
+  .container::before {
+    content: "";
+    display: table;
+  }
+  .container::after {
+    content: " ";
+    display: table;
+    clear: both;
+  }
+
+  .title-container,
+  .title {
+    height: 900px;
+    display: table;
+    width: 100%;
+  }
+
+  .title {
+    display: table-cell !important;
+    vertical-align: middle;
+    h1,
+    h2 {
+      margin: 0;
+      padding: 0;
+      color: white;
+    }
+    h1 {
+      margin-bottom: 0px;
+      font-size: 100px;
+      line-height: 1.5;
+      font-family: "Sacramento", Arial, serif;
+    }
+    h2 {
+      font-size: 20px;
+      line-height: 1.5;
+      margin-bottom: 30px;
+    }
+    .btn {
+      padding: 15px 20px;
+      background: #fff !important;
+      color: #f14e95;
+      border: none !important;
+      font-size: 14px;
+      text-transform: uppercase;
+      &:hover {
+        background: #fff !important;
+        -webkit-box-shadow: 0px 14px 30px -15px rgba(0, 0, 0, 0.75) !important;
+        -moz-box-shadow: 0px 14px 30px -15px rgba(0, 0, 0, 0.75) !important;
+        box-shadow: 0px 14px 30px -15px rgba(0, 0, 0, 0.75) !important;
+      }
+    }
+  }
+
+  .heading-container {
+    margin-bottom: 5em;
+    h2 {
+      font-size: 60px;
+      margin-bottom: 10px;
+      line-height: 1.5;
+      font-weight: bold;
+      color: #f14e95;
+      font-family: "Sacramento", Arial, serif;
+    }
+    span {
+      text-transform: uppercase;
+      font-size: 13px;
+      letter-spacing: 2px;
+      font-weight: 600;
+      color: rgba(0, 0, 0, 0.4);
+    }
+    p {
+      font-size: 18px;
+      line-height: 1.5;
+      color: #828282;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .cover {
+    padding: $padding-cover-small;
+    .title-container,
+    .title {
+      height: 600px;
+      h1 {
+        font-size: 40px;
+      }
+    }
+    .heading-container h2 {
+      font-size: 40px;
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .cover {
+    .title-container,
+    .title {
+      h1 {
+        font-size: 30px;
+      }
+      h2 {
+        font-size: 16px;
+      }
+    }
+  }
+}

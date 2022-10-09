@@ -20,7 +20,7 @@ const brideURL = new URL(`../assets/bride.jpg`, import.meta.url).href;
 </script>
 
 <template>
-  <div class="story">
+  <div class="cover">
     <div class="container animate-box" ref="storyElem">
       <div class="row">
         <div class="col-md-8 offset-md-2 text-center heading-container">
@@ -62,49 +62,14 @@ const brideURL = new URL(`../assets/bride.jpg`, import.meta.url).href;
   </div>
 </template>
 
-<style lang="scss">
-.story {
+<style lang="scss" scoped>
+@import "../styles/common.scss";
+
+.cover {
   padding: 7em 0;
   clear: both;
-  .container::before {
-    content: "";
-    display: table;
-  }
-  .container::after {
-    content: " ";
-    display: table;
-    clear: both;
-  }
-  .heading-container {
-    margin-bottom: 5em;
-    h2 {
-      font-size: 40px;
-      margin-bottom: 10px;
-      line-height: 1.5;
-      font-weight: bold;
-      color: #f14e95;
-      font-family: "Sacramento", Arial, serif;
-    }
-    span {
-      color: rgba(255, 255, 255, 0.5);
-      text-transform: uppercase;
-      font-size: 13px;
-      letter-spacing: 2px;
-      font-weight: 600;
-    }
-    p {
-      font-size: 18px;
-      line-height: 1.5;
-      color: #828282;
-    }
-    span {
-      text-transform: uppercase;
-      font-size: 13px;
-      letter-spacing: 2px;
-      font-weight: 600;
-      color: rgba(0, 0, 0, 0.4);
-    }
-  }
+  height: 100%;
+  background: white;
 
   .couple-wrap {
     width: 90%;
@@ -183,14 +148,11 @@ const brideURL = new URL(`../assets/bride.jpg`, import.meta.url).href;
 }
 
 @media screen and (max-width: 768px) {
-  .story {
+  .cover {
     padding: 3em 0;
     .container {
       margin: 0;
       max-width: 100%;
-    }
-    .heading-container h2 {
-      font-size: 40px;
     }
     .couple-wrap {
       width: 100%;
@@ -205,7 +167,7 @@ const brideURL = new URL(`../assets/bride.jpg`, import.meta.url).href;
 }
 
 @media screen and (max-width: 480px) {
-  .story {
+  .cover {
     .couple-wrap {
       .couple-half {
         .groom,

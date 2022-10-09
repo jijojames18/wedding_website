@@ -1,24 +1,11 @@
 <script setup>
 import { onMounted, ref } from "vue";
 
+import { generateWayPoint, getMapInstance, addMarker } from "@/utils.js";
+
 const googleMapChurch = ref(null);
 const googleMapReception = ref(null);
-
 const eventElem = ref(null);
-
-const getMapInstance = function (mapRef, coords) {
-  return new window.google.maps.Map(mapRef.value, {
-    zoom: 19,
-    center: new window.google.maps.LatLng(coords.lat, coords.lng),
-  });
-};
-
-const addMarker = function (map, coords) {
-  return new window.google.maps.Marker({
-    position: coords,
-    map,
-  });
-};
 
 onMounted(() => {
   if (!window.google || !window.google.maps) {
@@ -34,19 +21,13 @@ onMounted(() => {
 
       const mapChurch = getMapInstance(googleMapChurch, churchCoords);
       addMarker(mapChurch, churchCoords);
+
       const mapReception = getMapInstance(googleMapReception, receptionCoords);
       addMarker(mapReception, receptionCoords);
     });
   }
-  new window.Waypoint({
-    element: eventElem.value,
-    handler: function () {
-      eventElem.value.classList.add("animate__animated");
-      eventElem.value.classList.add("animate__fadeIn");
-      eventElem.value.classList.add("animate__fast");
-    },
-    offset: 200,
-  });
+
+  generateWayPoint(eventElem);
 });
 </script>
 
@@ -63,7 +44,7 @@ onMounted(() => {
           <div class="title">
             <div class="col-md-10 offset-md-1">
               <div class="col-md-6 col-sm-6 text-center event-container">
-                <div class="event-wrap" ref="wayPointElemEvent1">
+                <div class="event-wrap">
                   <h3>Wedding</h3>
                   <div class="event-col">
                     <i class="icon-clock"></i>
@@ -87,7 +68,7 @@ onMounted(() => {
                 </div>
               </div>
               <div class="col-md-6 col-sm-6 text-center event-container">
-                <div class="event-wrap" ref="wayPointElemEvent2">
+                <div class="event-wrap">
                   <h3>Reception</h3>
                   <div class="event-col">
                     <i class="icon-clock"></i>
@@ -120,54 +101,14 @@ onMounted(() => {
 </template>
 
 <style scoped lang="scss">
+@import "@/styles/common.scss";
+
 .cover {
   --animate-delay: 0s;
-
   background-image: url(@/assets/img_bg_3.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  position: relative;
-  width: 100%;
-  padding: 7em 0;
-  float: left;
-  clear: both;
-
-  .heading-container {
-    margin-bottom: 5em;
-    h2 {
-      font-size: 60px;
-      margin-bottom: 10px;
-      line-height: 1.5;
-      font-weight: bold;
-      color: #f14e95;
-      font-family: "Sacramento", Arial, serif;
-    }
-    span {
-      color: rgba(255, 255, 255, 0.5);
-      text-transform: uppercase;
-      font-size: 13px;
-      letter-spacing: 2px;
-      font-weight: 600;
-    }
-    p {
-      font-size: 18px;
-      line-height: 1.5;
-      color: #828282;
-    }
-    span {
-      text-transform: uppercase;
-      font-size: 13px;
-      letter-spacing: 2px;
-      font-weight: 600;
-      color: rgba(0, 0, 0, 0.4);
-    }
-  }
 
   .title-container,
   .title {
-    height: 700px;
-    display: table;
-    width: 100%;
     .event-container {
       float: left;
       padding: 0 15px;
@@ -226,9 +167,6 @@ onMounted(() => {
 }
 
 @media screen and (max-width: 768px) {
-  .heading-container h2 {
-    font-size: 40px;
-  }
   .title-container,
   .title {
     height: inherit;

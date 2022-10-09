@@ -16,9 +16,15 @@
   </footer>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
+@import "@/styles/variables.scss";
+
 .footer {
-  padding: 1em 0;
+  background-image: url(@/assets/bg_footer.jpg);
+  padding: $padding-footer;
   clear: both;
+  .block {
+    display: block;
+  }
 }
 </style>
