@@ -55,7 +55,12 @@ onMounted(() => {
 .cover {
   background-image: url(@/assets/bg_heading.jpg);
   padding-top: 150px;
-  height: 100vh;
+}
+
+@media screen and (orientation: portrait) {
+  .cover {
+    height: 100vh;
+  }
 }
 
 @media screen and (max-width: 768px) {
