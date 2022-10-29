@@ -17,7 +17,7 @@ onMounted(() => {
     <div class="container animate-box" ref="storyElem">
       <div class="row">
         <div class="col-md-8 offset-md-2 text-center heading-container">
-          <h2>Hello!</h2>
+          <h2>About</h2>
           <h3>December 26th, 2022 Trivandrum, Kerala</h3>
           <p>We invited you to celebrate our wedding</p>
         </div>
@@ -28,7 +28,7 @@ onMounted(() => {
             <img :src="groomURL" alt="groom" class="img-responsive" />
           </div>
           <div class="desc-groom">
-            <h3>User A</h3>
+            <h3>Jijo</h3>
             <p>
               Far far away, behind the word mountains, far from the countries
               Vokalia and Consonantia, there live the blind texts. Separated
@@ -42,7 +42,7 @@ onMounted(() => {
             <img :src="brideURL" alt="bride" class="img-responsive" />
           </div>
           <div class="desc-bride">
-            <h3>User B</h3>
+            <h3>Jothi</h3>
             <p>
               Far far away, behind the word mountains, far from the countries
               Vokalia and Consonantia, there live the blind texts. Separated

@@ -28,7 +28,7 @@ onMounted(() => {
         <div class="col-md-8 offset-md-2 text-center">
           <div class="title-container">
             <div class="title animate-box" ref="wayPointElem">
-              <h1>User A &amp; User B</h1>
+              <h1>Jothi &amp; Jijo</h1>
               <h2>We Are Getting Married</h2>
               <div class="simply-countdown" ref="simplyCountdownElem"></div>
               <p>
@@ -54,5 +54,13 @@ onMounted(() => {
 
 .cover {
   background-image: url(@/assets/bg_heading.jpg);
+  padding-top: 150px;
+  height: 100vh;
+}
+
+@media screen and (max-width: 768px) {
+  .cover {
+    padding: $padding-cover-small;
+  }
 }
 </style>

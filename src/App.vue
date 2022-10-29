@@ -9,6 +9,7 @@ import AppFooter from "./components/AppFooter.vue";
 import AppAbout from "./components/AppAbout.vue";
 
 const isLoading = ref(true);
+const windowWidth = ref(0);
 
 onMounted(() => {
   setTimeout(() => {
@@ -16,17 +17,22 @@ onMounted(() => {
     isLoading.value = false;
   }, 1000);
 });
+
+const handleResize = function ({ width }) {
+  windowWidth.value = width;
+};
 </script>
 
 <template>
   <div>
     <div class="loader" v-if="isLoading"></div>
     <div class="main-container" v-else>
+      <resize-observer @notify="handleResize" :showTrigger="true" />
       <AppNav />
       <AppHeading />
       <AppAbout />
       <AppEvent />
-      <AppGallery />
+      <AppGallery :windowWidth="windowWidth" />
       <AppFooter />
     </div>
   </div>

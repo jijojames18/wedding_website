@@ -36,61 +36,60 @@ onMounted(() => {
     <div class="container animate-box" ref="eventElem">
       <div class="row">
         <div class="col-md-8 offset-md-2 text-center heading-container">
-          <h2>Wedding Events</h2>
+          <h2>Events</h2>
         </div>
       </div>
       <div class="row">
         <div class="title-container">
           <div class="title">
-            <div class="col-md-10 offset-md-1">
-              <div class="col-md-6 col-sm-6 text-center event-container">
-                <div class="event-wrap">
-                  <h3>Wedding</h3>
-                  <div class="event-col">
-                    <i class="icon-clock"></i>
-                    <span>11:00 AM</span>
-                  </div>
-                  <div class="event-col">
-                    <i class="icon-calendar"></i>
-                    <span>26/12/2022</span>
-                  </div>
-                  <div class="event-col event-text-center">
-                    <i class="icon-location"></i>
-                    <span>
-                      St. Peter's Jacobite Syrian Orthodox Simhasana Cathedral
-                    </span>
-                  </div>
-                  <div
-                    class="google-map-container"
-                    id="google-map-church"
-                    ref="googleMapChurch"
-                  ></div>
+            <div class="col-md-6 col-sm-12 text-center event-container">
+              <div class="event-wrap">
+                <h3>Wedding</h3>
+                <div class="event-col">
+                  <i class="icon-clock"></i>
+                  <span>11:00 AM</span>
                 </div>
+                <div class="event-col">
+                  <i class="icon-calendar"></i>
+                  <span>26/12/2022</span>
+                </div>
+                <div class="event-col event-text-center">
+                  <i class="icon-location"></i>
+                  <span>
+                    St. Peter's Jacobite Syrian Orthodox Simhasana Cathedral
+                    Statue
+                  </span>
+                </div>
+                <div
+                  class="google-map-container"
+                  id="google-map-church"
+                  ref="googleMapChurch"
+                ></div>
               </div>
-              <div class="col-md-6 col-sm-6 text-center event-container">
-                <div class="event-wrap">
-                  <h3>Reception</h3>
-                  <div class="event-col">
-                    <i class="icon-clock"></i>
-                    <span>1:00 PM</span>
-                  </div>
-                  <div class="event-col">
-                    <i class="icon-calendar"></i>
-                    <span>26/12/2022</span>
-                  </div>
-                  <div class="event-col event-text-center">
-                    <i class="icon-location"></i>
-                    <span>
-                      Sri Mulam Club CV Raman Pillai Rd, Near Tagore Theatre
-                      Vazhuthacaud
-                    </span>
-                  </div>
-                  <div
-                    class="google-map-container"
-                    id="google-map-reception"
-                    ref="googleMapReception"
-                  ></div>
+            </div>
+            <div class="col-md-6 col-sm-12 text-center event-container">
+              <div class="event-wrap">
+                <h3>Reception</h3>
+                <div class="event-col">
+                  <i class="icon-clock"></i>
+                  <span>1:00 PM</span>
                 </div>
+                <div class="event-col">
+                  <i class="icon-calendar"></i>
+                  <span>26/12/2022</span>
+                </div>
+                <div class="event-col event-text-center">
+                  <i class="icon-location"></i>
+                  <span>
+                    Sri Mulam Club CV Raman Pillai Rd, Near Tagore Theatre
+                    Vazhuthacaud
+                  </span>
+                </div>
+                <div
+                  class="google-map-container"
+                  id="google-map-reception"
+                  ref="googleMapReception"
+                ></div>
               </div>
             </div>
           </div>
@@ -106,6 +105,10 @@ onMounted(() => {
 .cover {
   --animate-delay: 0s;
   background-image: url(@/assets/bg_event.jpg);
+
+  .title-container {
+    margin-top: 15px;
+  }
 
   .title-container,
   .title {
@@ -158,6 +161,12 @@ onMounted(() => {
           clear: both;
         }
       }
+    }
+  }
+
+  @media (max-width: 576px) {
+    .event-wrap {
+      margin-top: 15px;
     }
   }
 }
