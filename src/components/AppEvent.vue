@@ -104,7 +104,6 @@ onMounted(() => {
 
 .cover {
   --animate-delay: 0s;
-  background-image: url(@/assets/bg_event.jpg);
 
   .title-container {
     margin-top: 15px;

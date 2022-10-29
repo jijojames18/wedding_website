@@ -76,7 +76,7 @@ onMounted(() => {
 
 .cover {
   --animate-delay: 0s;
-  background-image: url(@/assets/bg_gallery.jpg);
+  //background-image: url(@/assets/bg_gallery.jpg);
   .carousel-3d-slide {
     border-width: 0px !important;
     border-radius: 30px;

@@ -5,8 +5,6 @@ import AppNav from "./components/AppNav.vue";
 import AppHeading from "./components/AppHeading.vue";
 import AppEvent from "./components/AppEvent.vue";
 import AppGallery from "./components/AppGallery.vue";
-import AppFooter from "./components/AppFooter.vue";
-import AppAbout from "./components/AppAbout.vue";
 
 const isLoading = ref(true);
 const windowWidth = ref(0);
@@ -30,10 +28,8 @@ const handleResize = function ({ width }) {
       <resize-observer @notify="handleResize" :showTrigger="true" />
       <AppNav />
       <AppHeading />
-      <AppAbout />
       <AppEvent />
       <AppGallery :windowWidth="windowWidth" />
-      <AppFooter />
     </div>
   </div>
 </template>
