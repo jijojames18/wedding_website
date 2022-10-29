@@ -3,7 +3,7 @@
     <div class="container">
       <div class="row">
         <div class="col-xs-2">
-          <div class="nav-logo"></div>
+          <div class="nav-logo">J & J</div>
         </div>
       </div>
     </div>

@@ -1,4 +1,9 @@
+import definePopupClass from "./Popup";
+
 const offsetWayPoint = 250;
+
+const EVENT_CHURCH = "church";
+const EVENT_HALL = "hall";
 
 const simplyCountdownConfig = {
   year: 2022,
@@ -8,8 +13,8 @@ const simplyCountdownConfig = {
 };
 
 const remainderButtonConfig = {
-  name: "Add the title of your event",
-  description: "A nice description does not hurt",
+  name: "Jothi and Jijo wedding",
+  description: "Jothi and Jijo wedding",
   startDate: "2022-12-26",
   endDate: "2022-12-26",
   startTime: "11:00",
@@ -53,20 +58,44 @@ const getMapInstance = function (mapRef, coords) {
   return new window.google.maps.Map(mapRef.value, {
     zoom: 19,
     center: new window.google.maps.LatLng(coords.lat, coords.lng),
+    mapTypeControl: false,
   });
 };
 
-const addMarker = function (map, coords) {
-  return new window.google.maps.Marker({
+const addInfoWindow = function (map, coords, type) {
+  // Create marker
+  new window.google.maps.Marker({
     position: coords,
     map,
   });
+  // Create popup
+  let content;
+  if (type == EVENT_CHURCH) {
+    content =
+      "<div> St. Peter's Jacobite Syrian Orthodox Simhasana Cathedral </div><br />";
+  } else {
+    content =
+      "<div> Sri Mulam Club, Near Tagore Theatre, Vazhuthacaud </div><br />";
+  }
+  content += `<a target="_blank" href="http://www.google.com/maps/place/${coords.lat},${coords.lng}"> View directions </a>`;
+
+  let contentElem = document.createElement("div");
+  contentElem.innerHTML = content;
+
+  let Popup = definePopupClass();
+  let popup = new Popup(
+    new window.google.maps.LatLng(coords.lat, coords.lng),
+    contentElem
+  );
+  popup.setMap(map);
 };
 
 export {
   generateWayPoint,
   getMapInstance,
-  addMarker,
+  addInfoWindow,
   remainderButtonConfig,
   simplyCountdownConfig,
+  EVENT_CHURCH,
+  EVENT_HALL,
 };

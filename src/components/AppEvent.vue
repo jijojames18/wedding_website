@@ -1,7 +1,13 @@
 <script setup>
 import { onMounted, ref } from "vue";
 
-import { generateWayPoint, getMapInstance, addMarker } from "@/utils.js";
+import {
+  generateWayPoint,
+  getMapInstance,
+  addInfoWindow,
+  EVENT_CHURCH,
+  EVENT_HALL,
+} from "@/utils.js";
 
 const googleMapChurch = ref(null);
 const googleMapReception = ref(null);
@@ -20,10 +26,10 @@ onMounted(() => {
       const receptionCoords = { lat: 8.5028359, lng: 76.9599708 };
 
       const mapChurch = getMapInstance(googleMapChurch, churchCoords);
-      addMarker(mapChurch, churchCoords);
+      addInfoWindow(mapChurch, churchCoords, EVENT_CHURCH);
 
       const mapReception = getMapInstance(googleMapReception, receptionCoords);
-      addMarker(mapReception, receptionCoords);
+      addInfoWindow(mapReception, receptionCoords, EVENT_HALL);
     });
   }
 
@@ -104,6 +110,7 @@ onMounted(() => {
 
 .cover {
   --animate-delay: 0s;
+  background-image: url(@/assets/bg_event.jpg);
 
   .title-container {
     margin-top: 15px;

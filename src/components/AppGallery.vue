@@ -5,7 +5,7 @@ import { Carousel3d, Slide } from "vue3-carousel-3d";
 import { generateWayPoint } from "@/utils.js";
 
 const props = defineProps({
-  windowWidth: String,
+  windowWidth: Number,
 });
 
 const { windowWidth } = toRefs(props);
@@ -76,7 +76,6 @@ onMounted(() => {
 
 .cover {
   --animate-delay: 0s;
-  //background-image: url(@/assets/bg_gallery.jpg);
   .carousel-3d-slide {
     border-width: 0px !important;
     border-radius: 30px;
