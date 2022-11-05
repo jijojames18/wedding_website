@@ -62,7 +62,7 @@ const getMapInstance = function (mapRef, coords) {
   });
 };
 
-const addInfoWindow = function (map, coords, type) {
+const addInfoWindow = function (map, coords, type, windowWidth) {
   // Create marker
   new window.google.maps.Marker({
     position: coords,
@@ -75,14 +75,14 @@ const addInfoWindow = function (map, coords, type) {
     content =
       "<div> Wedding : St. Peter's Jacobite Syrian Orthodox Simhasana Cathedral </div><br />";
     offset = {
-      left: -95,
+      left: windowWidth > 1000 ? -95 : 0,
       top: -155,
     };
   } else {
     content =
       "<div> Reception : Sri Mulam Club, Near Tagore Theatre, Vazhuthacaud </div><br />";
     offset = {
-      left: -95,
+      left: windowWidth > 1000 ? -95 : 0,
       top: 225,
     };
   }

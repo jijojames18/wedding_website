@@ -1,5 +1,5 @@
 <script setup>
-import { onMounted, ref } from "vue";
+import { onMounted, ref, toRefs, defineProps } from "vue";
 
 import {
   generateWayPoint,
@@ -11,6 +11,12 @@ import {
 
 const googleMap = ref(null);
 const eventElem = ref(null);
+
+const props = defineProps({
+  windowWidth: Number,
+});
+
+const { windowWidth } = toRefs(props);
 
 onMounted(() => {
   if (!window.google || !window.google.maps) {
@@ -26,8 +32,8 @@ onMounted(() => {
       const mapCenterCoords = { lat: 8.5015468, lng: 76.9533447 };
 
       const map = getMapInstance(googleMap, mapCenterCoords);
-      addInfoWindow(map, churchCoords, EVENT_CHURCH);
-      addInfoWindow(map, receptionCoords, EVENT_HALL);
+      addInfoWindow(map, churchCoords, EVENT_CHURCH, windowWidth.value);
+      addInfoWindow(map, receptionCoords, EVENT_HALL, windowWidth.value);
     });
   }
 

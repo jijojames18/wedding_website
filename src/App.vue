@@ -28,7 +28,7 @@ const handleResize = function ({ width }) {
       <resize-observer @notify="handleResize" :showTrigger="true" />
       <AppNav />
       <AppHeading />
-      <AppEvent />
+      <AppEvent :windowWidth="windowWidth" />
       <AppGallery :windowWidth="windowWidth" />
     </div>
   </div>
