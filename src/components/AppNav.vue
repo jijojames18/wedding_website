@@ -27,12 +27,7 @@
     padding: 0;
     line-height: $size-logo;
     font-family: $font-sacramento;
-
-    a {
-      padding: $link-padding;
-      color: $link-color;
-      text-decoration: none;
-    }
+    color: $link-color;
   }
 }
 </style>

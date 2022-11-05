@@ -37,7 +37,7 @@ watchEffect(() => {
 const getImageUrl = function (i) {
   return new URL(`../assets/g${i}.jpg`, import.meta.url).href;
 };
-const slides = 3;
+const slides = 6;
 const galleryElem = ref(null);
 
 onMounted(() => {
