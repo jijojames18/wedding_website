@@ -60,7 +60,6 @@ onMounted(() => {
 
 @media screen and (min-width: 800px) {
   .cover {
-    background-position-y: 65%;
     .offset-md-2 {
       margin-left: 0;
     }
@@ -69,7 +68,6 @@ onMounted(() => {
 
 @media screen and (min-width: 300px) {
   .cover {
-    background-position-y: 65%;
     background-position-x: 78%;
     .offset-md-2 {
       margin-left: 0;

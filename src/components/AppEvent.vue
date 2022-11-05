@@ -125,7 +125,7 @@ onMounted(() => {
     .feature-heading {
       h3 {
         line-height: 2.2;
-        font-family: "Sacramento", Arial, serif;
+        font-family: $font-sacramento;
         font-size: 30px;
       }
     }
@@ -134,7 +134,7 @@ onMounted(() => {
       margin-right: 5%;
       width: 54px;
       height: 54px;
-      background: #fff;
+      background: $white;
       display: table;
       text-align: center;
       -webkit-box-shadow: 0px 14px 30px -15px rgba(0, 0, 0, 0.75);

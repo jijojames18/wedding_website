@@ -1,4 +1,8 @@
-# wedding_website
+# Wedding Website
+
+Wedding website for Jothi and Jijo. Built using Vue 3.  
+Test website deployed at [heroku](https://hidden-escarpment-67484.herokuapp.com/).  
+Actual website can be seen at https://jothiandjijo.com
 
 ## Customize configuration
 

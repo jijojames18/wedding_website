@@ -76,9 +76,16 @@ onMounted(() => {
 
 .cover {
   --animate-delay: 0s;
+
   .carousel-3d-slide {
     border-width: 0px !important;
     border-radius: 30px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .cover {
+    margin-bottom: 6em;
   }
 }
 </style>

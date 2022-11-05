@@ -65,7 +65,7 @@ body {
     .popup-bubble-content {
       position: absolute;
       transform: translate(-50%, -100%);
-      background-color: white;
+      background-color: $white;
       padding: 6px;
       border-radius: 4px;
       overflow-y: auto;
@@ -73,8 +73,8 @@ body {
       box-shadow: 0px 2px 10px 1px rgba(0, 0, 0, 0.5);
       font-weight: 500;
       font-size: 14px;
-      color: black;
-      font-family: "Work Sans", Arial, sans-serif;
+      color: $black;
+      font-family: $font-work-sans;
       a {
         text-decoration: none;
         color: #1a73e8;
