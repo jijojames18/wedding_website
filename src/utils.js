@@ -56,7 +56,7 @@ const generateWayPoint = function (wayPointElem, customEffect) {
 
 const getMapInstance = function (mapRef, coords) {
   return new window.google.maps.Map(mapRef.value, {
-    zoom: 19,
+    zoom: 15,
     center: new window.google.maps.LatLng(coords.lat, coords.lng),
     mapTypeControl: false,
   });
@@ -70,12 +70,21 @@ const addInfoWindow = function (map, coords, type) {
   });
   // Create popup
   let content;
+  let offset = {};
   if (type == EVENT_CHURCH) {
     content =
-      "<div> St. Peter's Jacobite Syrian Orthodox Simhasana Cathedral </div><br />";
+      "<div> Wedding : St. Peter's Jacobite Syrian Orthodox Simhasana Cathedral </div><br />";
+    offset = {
+      left: -95,
+      top: -155,
+    };
   } else {
     content =
-      "<div> Sri Mulam Club, Near Tagore Theatre, Vazhuthacaud </div><br />";
+      "<div> Reception : Sri Mulam Club, Near Tagore Theatre, Vazhuthacaud </div><br />";
+    offset = {
+      left: -95,
+      top: 225,
+    };
   }
   content += `<a target="_blank" href="http://www.google.com/maps/place/${coords.lat},${coords.lng}"> View directions </a>`;
 
@@ -85,7 +94,8 @@ const addInfoWindow = function (map, coords, type) {
   let Popup = definePopupClass();
   let popup = new Popup(
     new window.google.maps.LatLng(coords.lat, coords.lng),
-    contentElem
+    contentElem,
+    offset
   );
   popup.setMap(map);
 };

@@ -7,8 +7,9 @@ function definePopupClass() {
    * @constructor
    * @extends {google.maps.OverlayView}
    */
-  let Popup = function (position, content) {
+  let Popup = function (position, content, offset) {
     this.position = position;
+    this.offset = offset;
 
     content.classList.add("popup-bubble-content");
 
@@ -49,8 +50,8 @@ function definePopupClass() {
         : "none";
 
     if (display === "block") {
-      this.anchor.style.left = -65 + "px";
-      this.anchor.style.top = -60 + "px";
+      this.anchor.style.left = this.offset.left + "px";
+      this.anchor.style.top = this.offset.top + "px";
     }
     if (this.anchor.style.display !== display) {
       this.anchor.style.display = display;
