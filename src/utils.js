@@ -9,6 +9,9 @@ const simplyCountdownConfig = {
   year: 2022,
   month: 12,
   day: 26,
+  hours: 11,
+  minutes: 0,
+  seconds: 0,
   countUp: true,
 };
 
