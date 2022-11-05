@@ -53,8 +53,28 @@ onMounted(() => {
 @import "@/styles/common.scss";
 
 .cover {
-  background-image: url(@/assets/bg_heading.jpg);
+  background-image: url(@/assets/bg_heading_large.jpg);
   padding-top: 150px;
+  background-position-y: 65%;
+}
+
+@media screen and (min-width: 800px) {
+  .cover {
+    background-position-y: 65%;
+    .offset-md-2 {
+      margin-left: 0;
+    }
+  }
+}
+
+@media screen and (min-width: 300px) {
+  .cover {
+    background-position-y: 65%;
+    background-position-x: 78%;
+    .offset-md-2 {
+      margin-left: 0;
+    }
+  }
 }
 
 @media screen and (orientation: portrait) {
