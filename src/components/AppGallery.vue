@@ -47,7 +47,7 @@ onMounted(() => {
 
 <template>
   <div class="cover">
-    <div class="container animate-box" ref="galleryElem">
+    <div class="container" ref="galleryElem">
       <div class="row">
         <div class="col-md-8 offset-md-2 text-center heading-container">
           <h2>Gallery</h2>

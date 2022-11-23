@@ -4,11 +4,7 @@
       <div class="row copyright">
         <div class="col-md-12 text-center">
           <p>
-            <small class="block">
-              Design by
-              <a href="http://freehtml5.co/" target="_blank">FREEHTML5.co</a>
-            </small>
-            <small class="block"> Developed by Jijo James </small>
+            <small class="block"> jothiandjijo.com </small>
           </p>
         </div>
       </div>
@@ -20,6 +16,7 @@
 @import "@/styles/variables.scss";
 
 .footer {
+  background: rgba(0, 0, 0, 0.04);
   padding: $padding-footer;
   clear: both;
   .block {
