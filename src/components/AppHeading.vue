@@ -32,14 +32,14 @@ onMounted(() => {
               <h2>We Are Getting Married</h2>
               <div class="simply-countdown" ref="simplyCountdownElem"></div>
               <p>
-                <a
+                <!-- <a
                   href="#"
                   class="btn btn-default btn-sm"
                   ref="saveDateButton"
                   @click="saveDateClick"
                 >
                   Save the date
-                </a>
+                </a> -->
               </p>
             </div>
           </div>
