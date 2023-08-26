@@ -29,7 +29,6 @@ onMounted(() => {
           <div class="title-container">
             <div class="title animate-box" ref="wayPointElem">
               <h1>Jothi &amp; Jijo</h1>
-              <h2>We Are Getting Married</h2>
               <div class="simply-countdown" ref="simplyCountdownElem"></div>
               <p>
                 <!-- <a
@@ -55,7 +54,7 @@ onMounted(() => {
 .cover {
   background-image: url(@/assets/bg_heading_large.jpg);
   padding-top: 150px;
-  background-position-y: 65%;
+  background-position-y: 50%;
 }
 
 @media screen and (min-width: 800px) {
