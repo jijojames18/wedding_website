@@ -1,20 +1,10 @@
 <script setup>
 import { onMounted, ref } from "vue";
-import { atcb_action } from "add-to-calendar-button";
 
-import {
-  generateWayPoint,
-  remainderButtonConfig,
-  simplyCountdownConfig,
-} from "@/utils.js";
+import { generateWayPoint, simplyCountdownConfig } from "@/utils.js";
 
-const saveDateButton = ref(null);
 const simplyCountdownElem = ref(null);
 const wayPointElem = ref(null);
-
-const saveDateClick = function () {
-  atcb_action(remainderButtonConfig, saveDateButton.value);
-};
 
 onMounted(() => {
   window.simplyCountdown(simplyCountdownElem.value, simplyCountdownConfig);

@@ -10,7 +10,6 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
   },
   "dependencies": {
-    "add-to-calendar-button": "^1.15.5",
     "animate.css": "^4.1.1",
     "bootstrap": "^5.2.1",
     "bootstrap-vue": "^2.22.0",
